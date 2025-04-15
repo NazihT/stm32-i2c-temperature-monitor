@@ -31,3 +31,9 @@ The project is developed using HAL and CubeIDE, with future plans to implement P
   - Implementing **PWM motor control** for fan speed.
   - Adding **SPI SD card logging** for data storage.
 
+## 🎬 Demo
+Check out the demo of the project below:
+
+
+
+You can also view the demo by following this [link](https://github.com/NazihT/stm32-i2c-temperature-monitor/blob/885cf963f26c966cc1af5b5fea932741de42f63d/DEMO.gif)
