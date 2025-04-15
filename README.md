@@ -1,1 +1,33 @@
-# stm32-i2c-temperature-monitor
+# STM32 Custom I2C Temp-Humidity Monitor with Climate Control
+
+## 📖 Description
+This project uses the AS2320 I2C temperature and humidity sensor to measure environmental conditions. I wrote a custom I2C driver to interface with the sensor. The data is displayed on an I2C LCD and sent via UART to a terminal. Depending on the temperature:
+
+- A **red LED** is turned on if the temperature exceeds 25°C, and the fan (controlled by an L298N motor driver) is turned on.
+- A **blue LED** is turned on if the temperature is below 25°C, and the fan is off.
+
+The project is developed using HAL and CubeIDE, with future plans to implement PWM motor control and an SPI data logger for saving the temperature and humidity data to an SD card.
+
+## 🛠️ Technologies Used
+- STM32 HAL
+- CubeIDE
+- AS2320 I2C sensor
+- Custom I2C driver (written from scratch)
+- I2C LCD
+- L298N motor driver
+- UART Communication
+- Future plans to implement:
+  - PWM for fan speed control
+  - SPI data logger for SD card storage
+
+## ⚙️ Features
+- **Temperature and humidity readings** from AS2320 sensor using a custom I2C driver.
+- **UART communication** to send data to a terminal.
+- **I2C LCD** to display temperature and humidity values.
+- **Fan control** based on temperature:
+  - **Red LED** and fan on if temperature is above 25°C.
+  - **Blue LED** and fan off if temperature is below 25°C.
+- **Future updates**:
+  - Implementing **PWM motor control** for fan speed.
+  - Adding **SPI SD card logging** for data storage.
+
