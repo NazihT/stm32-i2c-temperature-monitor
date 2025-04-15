@@ -52,3 +52,19 @@ Mkfile.old
 dkms.conf
 .pio/
 .vscode/
+# Ignore compiled files
+*.o
+*.a
+*.elf
+*.exe
+
+# Ignore IDE settings
+.vscode/
+.idea/
+
+# Ignore build folders
+Debug/
+Release/
+
+# Ignore STM32CubeMX generated files if not needed
+/.mx/
