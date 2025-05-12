@@ -29,12 +29,9 @@ uint8_t Read_AM2320(float* temperature, float* humidity) {
     uint16_t temp_raw = (data[4] << 8) | data[5];
 
     // Handle negative temps
-    if (temp_raw & 0x8000) {
-        temp_raw &= 0x7FFF;
-        *temperature = -((float)temp_raw / 10.0);
-    } else {
+
         *temperature = ((float)temp_raw / 10.0);
-    }
+
 
     *humidity = ((float)hum / 10.0);
     return 0;
@@ -45,9 +42,22 @@ void DisplayTemperatureAndHumidity(float temperature, float humidity, uint8_t er
 
     LCD_Send_Cmd(0x01);  // Clear LCD
     HAL_Delay(2);
+    char c ;
+
+    if (temperature < 15)
+    {
+    	c='C';
+
+    }
+    else if (temperature >=15 && temperature <30)
+    {
+    	c='M';
+    }
+
+    else c='H';
 
     if (err == 0) {
-        sprintf(lcd_str1, "Temp: %.1fC", temperature);
+        sprintf(lcd_str1, "Temp: %.1fC : %c" , temperature,c);
         sprintf(lcd_str2, "Humidity: %.1f%%", humidity);
     } else {
         sprintf(lcd_str1, "Sensor Failed");
