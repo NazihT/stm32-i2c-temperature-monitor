@@ -3,10 +3,12 @@
 ## 📖 Description
 This project uses the AS2320 I2C temperature and humidity sensor to measure environmental conditions. I wrote a custom I2C driver to interface with the sensor. The data is displayed on an I2C LCD and sent via UART to a terminal. Depending on the temperature:
 
-- A **red LED** is turned on if the temperature exceeds 25°C, and the fan (controlled by an L298N motor driver) is turned on.
-- A **blue LED** is turned on if the temperature is below 25°C, and the fan is off.
+- A **red LED** is turned on if the temperature exceeds 30°C .
+- A **green LED** is turned on if the temperature is between 15 and 30 .
+- A **blue LED** is turned on if the temperature is below 15 .
+- A fan controlled by the L298N  with varying duty cycle depending on temperature .
 
-The project is developed using HAL and CubeIDE, with future plans to implement PWM motor control and an SPI data logger for saving the temperature and humidity data to an SD card.
+The project is developed using HAL and CubeIDE, with future plans to implement  an SPI data logger for saving the temperature and humidity data to an SD card.
 
 ## 🛠️ Technologies Used
 - STM32 HAL
@@ -14,10 +16,10 @@ The project is developed using HAL and CubeIDE, with future plans to implement P
 - AS2320 I2C sensor
 - Custom I2C driver (written from scratch)
 - I2C LCD
-- L298N motor driver
+- L298N motor driver with PWM for fan speed control
 - UART Communication
 - Future plans to implement:
-  - PWM for fan speed control
+  - PWM for fan speed control (added!)
   - SPI data logger for SD card storage
 
 ## ⚙️ Features
@@ -28,7 +30,7 @@ The project is developed using HAL and CubeIDE, with future plans to implement P
   - **Red LED** and fan on if temperature is above 25°C.
   - **Blue LED** and fan off if temperature is below 25°C.
 - **Future updates**:
-  - Implementing **PWM motor control** for fan speed.
+  - Implementing **PWM motor control** for fan speed. (Updated ! )
   - Adding **SPI SD card logging** for data storage.
 
 ## 🎬 Demo
